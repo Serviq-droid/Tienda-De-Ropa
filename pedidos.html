@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedidos - StyleHub</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <span class="logo-text">StyleHub</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="catalogo.html">Catálogo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="compra.html">Comprar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="pedidos.html">Pedidos</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Pedidos Registrados</h1>
+            <p class="lead">Historial de todas las compras</p>
+        </div>
+    </div>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <label for="filtroMetodo" class="form-label">Filtrar por Método de Pago</label>
+                            <select class="form-select" id="filtroMetodo">
+                                <option value="">Todos</option>
+                                <option value="Tarjeta">Tarjeta</option>
+                                <option value="Transferencia">Transferencia</option>
+                                <option value="Contraentrega">Contraentrega</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="filtroFecha" class="form-label">Filtrar por Fecha</label>
+                            <input type="date" class="form-control" id="filtroFecha">
+                        </div>
+                        <div class="col-md-4 d-flex align-items-end">
+                            <button class="btn btn-outline-danger w-100" onclick="limpiarPedidos()">Limpiar Todos los Pedidos</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Cliente</th>
+                                    <th>Producto</th>
+                                    <th>Talla</th>
+                                    <th>Cantidad</th>
+                                    <th>Método de Pago</th>
+                                    <th>Total</th>
+                                    <th>Fecha</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tablaPedidos">
+                                <tr>
+                                    <td colspan="7" class="text-center text-muted py-5">No hay pedidos registrados</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card shadow-sm mt-4">
+                <div class="card-body">
+                    <h5 class="fw-bold mb-3">Total General de Ventas</h5>
+                    <h2 class="text-custom" id="totalVentas">$0.00</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">StyleHub</h5>
+                    <p class="text-muted">Tu destino de moda online. Calidad y estilo en cada prenda.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">Enlaces Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="footer-link">Inicio</a></li>
+                        <li><a href="catalogo.html" class="footer-link">Catálogo</a></li>
+                        <li><a href="compra.html" class="footer-link">Comprar</a></li>
+                        <li><a href="pedidos.html" class="footer-link">Pedidos</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">Redes Sociales</h5>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Facebook</a>
+                        <a href="#" class="social-link">Instagram</a>
+                        <a href="#" class="social-link">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4 border-secondary">
+            <div class="text-center text-muted">
+                <p class="mb-0">&copy; 2025 StyleHub. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/productos.js"></script>
+    <script src="js/pedidos.js"></script>
+</body>
+</html>
